@@ -1,0 +1,25 @@
+<mat-dialog-content>
+    <form [formGroup]="frmData">
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Codigo Pregunta</mat-label>
+            <input matInput placeholder="codigoPregunta" formControlName="codigoPregunta">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Descripcion</mat-label>
+            <textarea matInput placeholder="Descripcion" formControlName="descripcion"></textarea>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width" appearance="outline">
+            <mat-label>Flag Conformidad (S/N)</mat-label>
+            <input matInput placeholder="Flag Conformidad (S/N)" formControlName="flagConformidad">
+        </mat-form-field>
+
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-raised-button color="primary" style="margin: 2px; width: 90px;"
+        (click)="limpiarControles()">Nuevo</button>
+    <button mat-raised-button color="primary" style="margin: 2px; width: 90px;" (click)="guardar()">Guardar</button>
+    <button mat-button [mat-dialog-close]="true">Cerrar</button>
+</mat-dialog-actions>

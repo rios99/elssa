@@ -1,0 +1,59 @@
+<section>Pregunta</section>
+<mat-card>
+    <mat-card-content>
+        <mat-table [dataSource]="dataSourcePreguntas" matSort>
+            <ng-container matColumnDef="codigo">
+                <mat-header-cell *matHeaderCellDef>Nro</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    {{element.codigo}}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="descripcion">
+                <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="opciones">
+                <mat-header-cell *matHeaderCellDef> Acción </mat-header-cell>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="primary" class="mr-16" (click)="verRespuestasPorPregunta(element.codigo)">
+                    <mat-icon>visibility</mat-icon>
+                    </button>
+                  <button mat-icon-button color="primary" class="mr-16" (click)="addRespuesta(element.codigo)">
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                </td>
+              </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumnsPreg"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumnsPreg;">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[10]"></mat-paginator>
+    </mat-card-content>
+</mat-card>
+<mat-divider></mat-divider>
+<section>Respuestas</section>
+<mat-divider></mat-divider>
+<mat-card>
+    <mat-card-content>
+        <mat-table [dataSource]="dataSourceRpta" matSort>
+            <ng-container matColumnDef="codigoPregunta">
+                <mat-header-cell *matHeaderCellDef>Nro</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    {{element.codigoPregunta}}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="descripcion">
+                <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="flagConformidad">
+                <mat-header-cell *matHeaderCellDef> Conformidad </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.flagConformidad}} </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumnsRpta"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumnsRpta;">
+            </mat-row>
+        </mat-table>
+        <!-- <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator> -->
+    </mat-card-content>
+</mat-card>

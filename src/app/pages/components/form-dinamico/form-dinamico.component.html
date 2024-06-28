@@ -1,0 +1,200 @@
+
+<div class="max-md:w-full max-md:h-screen" fxFlexFill>
+    <div class="max-md:w-full container-w max-md:relative">
+        <div class="block md:hidden">
+            <app-header></app-header>
+        </div>
+        <div class="scroll-contenido w-[90%] mx-auto">
+            <div class="py-10 flex flex-col gap-7 justify-center">
+                <div class="flex flex-col gap-7 espaciadoLap">
+                    <p class="textInicio mx-auto w-[90%] font-semibold text-center text-gray-400" *ngIf="visibleCabecera">
+                        Te presentamos al aplicativo interactivo y accesible, dirigido a los miembros del Comité y Supervisor de
+                        Seguridad
+                        Salud en el Trabajo. <br>
+                        <br class="block md:hidden">
+                        Recuerda, el uso de este aplicativo no acarrea ningún tipo de acción de fiscalización.
+                    </p>
+                    <ng-container *ngIf="pasoUno; else mostrarSegundoPaso">
+                        <div class=" flex flex-col gap-7 espaciadoLap 2xl:gap-10">
+                          <div class="mx-auto bienvenida w-full ">
+                             <div class="rounded-xl w-[90%] mx-auto relative bg-sunagray-500 p-2 2xl:p-3 flex items-center">
+                                 <p class="py-0.5 p1 mx-auto">Hola, ¿cuál es tu
+                                     nombre?</p>
+                                  <div class="hidden xl:block">
+                                    <div class=" sunagray-triangle-left"></div>
+                                  </div>   
+                            </div>
+                         </div>
+                         <div class=" mx-auto inp w-full md:w-11/12">
+                             <form [formGroup]="frmData">
+                                 <div class=" rounded-xl mx-auto bg-sunared-100 p-2 2xl:p-3 w-[90%] md:w-[60%]">
+                                     <input type="text"
+                                         class="py-0.5 bg-transparent w-full outline-none text-2xl md:text-3xl text-center"
+                                         placeholder="" (input)="validarTexto($event)" formControlName="nombreUsuario">
+                                 </div>
+                             </form>
+                         </div>
+                        </div>
+                     </ng-container>
+                     <div class="w-full" *ngIf="visibleBtnSgt">
+                        <button
+                            class="boton w-40 next  text-lg font-bold bg-sunared-500 text-white py-2 px-4 rounded-full mx-auto block"
+                            (click)="getSiguiente()">Siguiente</button>
+                     </div>
+                     <ng-template #mostrarSegundoPaso>
+                        <ng-container *ngIf="pasoDos; else mostrarTercerPaso">
+                            <div class="mx-auto w-full ">
+                                <div class="rounded-xl w-[90%] mx-auto relative bg-sunagray-500 p-2 2xl:p-3 flex items-center">
+                                    <p class="p1 py-0.5 mx-auto text-xl md:text-3xl">Por favor, {{usuarioStorage}}. Indícanos el
+                                        RUC
+                                        de la empresa.
+                                    </p>
+                                    <div class="hidden xl:block">
+                                        <div class=" sunagray-triangle-left"></div>
+                                      </div>                         
+                                </div>
+                            </div>
+                            <div class="mx-auto w-10/12 md:w-11/12">
+                                <form [formGroup]="frmData">
+                                    <div class=" rounded-xl relative bg-sunared-100 p-2 2xl:p-3 w-[90%] md:w-[60%] mx-auto flex items-center">
+                                        <input type="text"
+                                            class="py-0.5 w-full bg-transparent outline-none text-xl md:text-3xl text-center"
+                                            placeholder="" (input)="validarNumero($event)" formControlName="rucEmpresa"
+                                            [maxlength]="11">
+                                    </div>
+                                </form>
+                            </div>
+                        </ng-container>
+                        <ng-template  #mostrarTercerPaso>
+                            <ng-container *ngIf="pasoTres; else mostrarSgtSecciones">
+                                <div class="flex flex-col gap-5 justify-center mx-auto">
+                                    <div class="justify-center w-full mx-auto">
+                                        <div class="rounded-xl relative bg-sunagray-500 p-3">
+                                            <p class=" py-0.5 mx-auto text-lg md:text-xl text-center">Bienvenido, {{usuarioStorage}}. Por
+                                                favor,
+                                                indícanos a qué grupo perteneces.
+                                            </p>
+                                
+                                            <div class="hidden xl:block">
+                                                <div class=" sunagray-triangle-left"></div>
+                                              </div>                                     
+                                        </div>
+                                    </div>
+                                    <div class="ml-16 md:ml-28 lg:ml-28 w-full mb-auto md:w-10/12">
+                                        <button class="text-sm lg:text-lg ml-auto w-8/12 absolute z-0 md:w-10/12 mt-2"
+                                            *ngFor="let row of listaGrupos" mat-raised-button color="primary"
+                                            (click)="getOpcionGrupo(row.codigo)">
+                                            <p>{{row.descripcion}}</p>
+                                        </button>
+                                    </div>
+                                </div>
+                            </ng-container>
+                            <ng-template #mostrarSgtSecciones>
+                                <div class="flex flex-col gap-10  justify-center mx-auto">
+                                   <div class="justify-center w-full mx-auto">
+                                        <div class="rounded-xl  relative  bg-sunagray-500 p-3 ">
+                                           <p class=" py-0.5 w-full mx-auto text-sm md:text-xl lg:text-base" style="text-align: center;"
+                                            [innerHTML]="mensajeDinamico">
+                                           </p>
+                                            <div class="hidden xl:block">
+                                                <div class=" sunagray-triangle-left"></div>
+                                              </div>                                     
+                                        </div>
+                                    </div>
+                                   <ng-container *ngIf="listaBtnDinamicos && listaBtnDinamicos.length > 0">
+                                      <div class="w-full pb-9 md:w-10/12">
+                                        <button class="text-sm absolute z-0 btnDinamico left-16 md:left-1/4 lg:text-lg w-8/12 md:w-2/3 mx-auto mt-2"
+                                            *ngFor="let row of listaBtnDinamicos" mat-raised-button color="primary"
+                                            (click)="getDataDinamica(row.codigo)">{{row.descripcion}}</button>
+                                      </div>
+                                   </ng-container>
+                                   <div class="mx-auto w-[70%] md:w-[50%] xl:w-[60%] xl:-ml-56 relative md:w-12/12 " *ngIf="visibleBtnFinalizar">
+                                        <div class=" mx-auto w-8/12 md:w-10/12 pb-2 ">
+                                          <button
+                                             class=" text-sm md:text-lg lg:text-sm mt-2 w-40 md:w-80  text-center font-bold bg-sunared-500 text-white py-2 px-4 rounded-3 mx-auto "
+                                             (click)="conformidad('S')">Conformidad
+                                             <i class="bi bi-file-earmark-text-fill ml-2"></i>
+                                          </button>
+                                          <button
+                                             class="  text-sm md:text-lg lg:text-sm mt-2 w-40 md:w-80  text-center font-bold bg-sunared-500 text-white py-2 px-4 rounded-3 mx-auto "
+                                             (click)="conformidad('N')">No Conformidad
+                                              <i class="bi bi-file-earmark-text-fill ml-2"></i>
+                                          </button>
+                                        </div>
+                                        <div class="container-flex mx-auto w-8/12 md:w-10/12 pb-2">
+                                          <button
+                                            class=" text-sm md:text-lg lg:text-sm w-40 md:w-80  text-center font-bold bg-sunablue-500 text-white py-2 px-4 rounded-3 mx-auto "
+                                            (click)="enviarDiagnostico()">Enviar Diagnostico
+                                            <i class="bi bi-envelope-arrow-up-fill ml-1"></i>
+                                           </button>
+                                        </div>
+                                    </div>
+                                    <ng-container>
+                                    <div class="flex flex-col md:flex-row gap-10 mx-auto">
+                                        <div class=""
+                                            *ngIf="listaArchivosDescarga && listaArchivosDescarga.length > 0">
+                                            <button mat-fab extended class="
+                                            absolute z-0" color="primary" style="width: 210px; cursor: pointer;"
+                                            *ngFor="let row of listaArchivosDescarga"
+                                            (click)="getDownloadDinamica(row.urlDescarga)">
+                                            <mat-icon>cloud_download</mat-icon>
+                                            {{row.tipoDocumentoApoyoURL}}
+                                            </button>
+                                        </div>
+                                         <div class=" "
+                                            *ngIf="finalizaMostrarDiagnostico">
+                                            <button mat-fab extended class="
+                                            absolute z-0" color="primary" style="width: 210px; cursor: pointer;"
+                                            (click)="finalizarMDiagnostico()">
+                                            <mat-icon>backspace</mat-icon>
+                                            Finalizar
+                                            </button>
+                                        </div>
+                                    </div>
+                                </ng-container>
+                                </div>
+                                
+                            </ng-template>
+                        </ng-template>
+                     </ng-template>
+                </div>
+             </div>
+             <div class="absolute bottom-28 right-5 md:right-20 container-btnRegresar z-50">
+                <div class=" iconoo">
+                    <a href="#/preguntas-frecuentes" target="_blank" class="mr-4 iconoo casita">
+                        <i class="bi bi-question"></i>
+                    </a>
+                    <div
+                        class="tooltip absolute bg-gray-800 text-white text-xs text-center -mt-8 -right-full transform -translate-x-2 p-2 rounded-md">
+                        Preguntas frecuentes</div>
+                </div>
+                <div class="casitaa-container volver iconoo mb-2" *ngIf="visibleBtnFinalizar">
+                    <a (click)="getOpcionesInicial()" class=" iconoo casita ">
+                        <i class="bi bi-reply-all-fill"></i>
+                    </a>
+                    <div
+                        class="tooltip2 relative bg-gray-800 text-white text-xs text-center p-2 rounded-md -mt-14 -left-1/2 transform -translate-x-1/2">
+                        Volver a inicio
+                    </div>
+                </div>
+                <div class="casitaa-container volver iconoo" *ngIf="visibleBtnRetroceder">
+                    <a (click)="retroceder()" class="iconoo casita">
+                        <i class="bi bi-arrow-return-left"></i>
+                    </a>
+                    <div
+                        class="tooltip3 relative bg-gray-800 text-white text-xs text-center p-2 rounded-md -mt-14 -left-1/2 transform -translate-x-1/2">
+                        Retroceder
+                    </div>
+                </div>
+                <div class=""></div>
+            </div>
+            
+        </div>
+        <div class="block md:hidden absolute bottom-0 w-full">
+            <app-footer></app-footer>
+        </div>  
+    </div> 
+</div>
+
+
+

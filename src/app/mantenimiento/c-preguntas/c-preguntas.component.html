@@ -1,0 +1,75 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="frmData">
+            <div class="example-full-width">
+                <mat-form-field appearance="outline" class="m-4">
+                    <mat-label>Codigo</mat-label>
+                    <input matInput placeholder="Codigo" formControlName="codigo">
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="m-4">
+                    <mat-label>Codigo Grupo</mat-label>
+                    <input matInput placeholder="Codigo Grupo" formControlName="codigoGrupo">
+                </mat-form-field>
+            </div>
+            
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Descripcion</mat-label>
+                <textarea matInput placeholder="Descripcion" formControlName="descripcion"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Url Descarga 01</mat-label>
+                <input matInput placeholder="Url Descarga 01" formControlName="urlDescarga1">
+            </mat-form-field>
+
+            <mat-form-field class="example-full-width" appearance="outline">
+                <mat-label>Url Descarga 02</mat-label>
+                <input matInput placeholder="Url Descarga 02" formControlName="urlDescarga2">
+            </mat-form-field>
+
+        </form>
+        <mat-divider></mat-divider>
+        <section style="display: flex; justify-content: end; padding-top: 5px; padding-bottom: 6px;">
+            <button mat-raised-button color="primary" style="margin: 2px; width: 90px;"
+                (click)="limpiarControles()">Nuevo</button>
+            <button mat-raised-button color="primary" style="margin: 2px; width: 90px;"
+                (click)="guardar()">Guardar</button>
+            <button mat-raised-button color="primary" style="margin: 2px; width: 90px;"
+                (click)="getBuscar()">Consultar</button>
+        </section>
+        <mat-divider></mat-divider>
+        <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="codigo">
+                <mat-header-cell *matHeaderCellDef>Nro</mat-header-cell>
+                <mat-cell *matCellDef="let element">
+                    {{element.codigo}}
+                </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="descripcion">
+                <mat-header-cell *matHeaderCellDef> Descripcion </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.descripcion}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="flagActivo">
+                <mat-header-cell *matHeaderCellDef> Flag Activo </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.flagActivo}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="urlDescarga1">
+                <mat-header-cell *matHeaderCellDef> Url Descarga 01 </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.urlDescarga1}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="codigoGrupo">
+                <mat-header-cell *matHeaderCellDef> Codigo Grupo </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.codigoGrupo}}</mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="urlDescarga2">
+                <mat-header-cell *matHeaderCellDef> Url Descarga 02 </mat-header-cell>
+                <mat-cell *matCellDef="let element">{{element.urlDescarga2}}</mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;">
+            </mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
+    </mat-card-content>
+</mat-card>

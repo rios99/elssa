@@ -1,0 +1,24 @@
+<mat-card class="example-card  asa">
+    <mat-card-header class="mb-4 bg-sunablue-500 text-light">
+        <mat-card-title class="mb-2">Ingrese su email</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="ml-auto email-container inp w-12/12 md:w-12/12 pb-12">
+            <form [formGroup]="frmData">
+                <div class="text-input rounded-xl relative bg-sunared-100 p-3 email w-full flex items-center">
+                    <input type="text"
+                        class="py-0.5 w-full bg-transparent outline-none text-xl md:text-3xl text-center"
+                        placeholder="" formControlName="email">
+                </div>
+                <!-- <mat-form-field class="" >
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="Email" formControlName="email">
+                </mat-form-field> -->
+            </form>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" class="bg-sunared-500 mr-4 btn1" (click)="enviar()" [disabled]="procesoEnvio">Enviar</button>
+        <button mat-raised-button class="mat-button-wrapper btn-rojo-w" (click)="cerrar()">Cerrar</button>
+    </mat-card-actions>
+</mat-card>

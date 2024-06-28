@@ -1,0 +1,26 @@
+
+//  .body{
+//     min-height: 100%;
+//  }
+ @media(min-width: 768px) {
+    .body {
+        height: 73vh;
+        overflow-x: hidden;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+ }
+
+ @media(min-width: 1280px) and (max-width: 1530px){
+     .body {
+         height: 68vh;
+         overflow-x: hidden;
+     }
+ }
+ @media(min-width: 1741px) {
+    .body {
+        overflow-x: hidden;
+    }
+ }
+ 

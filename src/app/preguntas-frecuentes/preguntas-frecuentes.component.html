@@ -1,0 +1,118 @@
+<!-- <section>
+<p class="py-3 text-center" style="font-weight: 500;">Preguntas Frecuentes</p>
+<div class="mx-auto" style="width: 80%">
+    <mat-accordion>
+        <mat-expansion-panel *ngFor="let item of preguntas">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="font-weight: 500;">
+                    {{item.descripcion}}
+                </mat-panel-title>
+                <mat-panel-description> -->
+                    <!-- {{ item.respuesta}} -->
+                <!-- </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p [innerHTML]="item.respuesta"></p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+</section> -->
+
+<div class=" xd container-fluid h-20 relative bg-sunablue-500">
+    <div class="cabecera-container pt-3 d-flex align-items-center justify-content-around">
+        <div class="cabecera-items">
+            <img src="assets/inicio/logo_blanco.png" alt="" class="h-10">
+        </div>
+        <div class="cabecera-items text-light fs-4 fw-normal">
+            <h1>Superintendecia Nacional de Fiscalizacion Laboral</h1>
+        </div>
+    </div>
+</div>
+
+<div class="h-full asd w-12/12 md:w-full py-5 bg-sunagray-500 container-fluid">
+    <div class=" caja h-75 py-5 bg-sunagray-500 container bg-light" >
+       <div class=" caja2 container-xxl fs-6 mx-auto text-gray-500" style="background-color: #ffffff;">
+                    <p class="py-3 text-center fs-4" style="font-weight: 500;">Preguntas Frecuentes</p>
+                    <div class="mx-auto container-acordeon">
+                        <mat-accordion >
+                            <mat-expansion-panel *ngFor="let item of preguntas" class="my-3 caja3" >
+                                <mat-expansion-panel-header class="h-auto py-3 panel" >
+                                    <mat-panel-title style="font-weight: 500;"
+                                    class="titulo">
+                                        {{item.descripcion}}
+                                    </mat-panel-title>
+                                     <!-- <mat-panel-description>   -->
+                                        
+                                        <!-- {{ item.respuesta}} -->
+                                     <!-- </mat-panel-description>  -->
+                                </mat-expansion-panel-header>
+                                <p class="pt-3" [innerHTML]="item.respuesta"></p>
+                            </mat-expansion-panel>
+                        </mat-accordion>
+                    </div>
+            </div>        
+    </div>
+</div>
+
+
+
+                <!-- <p class="pb-4 text-center"><b>TÉRMINOS Y CONDICIONES</b></p> -->
+                <!-- <div>
+                <p>Esta sección, te proporcionaremos una descripción detallada de los Términos y Condiciones que rigen
+                tu uso de este sitio web. Es importante que leas y comprendas estos términos antes de continuar
+                utilizando nuestros servicios, ya que constituyen un contrato legal entre tú y nosotros.</p>
+
+                <p><b>Nuestra Misión:</b> En [Nombre de la Empresa], estamos comprometidos en ofrecerte una experiencia en línea segura y
+                satisfactoria. Nuestro sitio web es un espacio donde puedes encontrar información, productos y servicios
+                de alta calidad. Para garantizar un ambiente en el que todos los usuarios se sientan cómodos y seguros,
+                hemos establecido estos Términos y Condiciones.</p>
+
+                <p>Contenido del Acuerdo.</p>
+
+                <p>Este documento abarca una serie de aspectos clave, que incluyen.</p>
+
+                <p><b>Aceptación de Términos:</b> Al acceder y utilizar nuestro sitio web, aceptas automáticamente estar sujeto a
+                estos Términos y Condiciones. Asegúrate de revisarlos con regularidad, ya que podrían cambiar en el
+                futuro.</p>
+
+                <p><b>Uso Apropiado:</b> Está prohibido utilizar nuestro sitio web para fines ilegales o inapropiados. Además,
+                respetar los derechos de propiedad intelectual de terceros es esencial.</p>
+
+                <p><b>Privacidad:</b> Protegemos tus datos personales y respetamos tu privacidad. Te recomendamos leer nuestra
+                Política de Privacidad para entender cómo tratamos la información que compartes con nosotros.</p>
+
+                <p><b>Cuenta de Usuario:</b> Si creas una cuenta en nuestro sitio web, eres responsable de mantener la
+                confidencialidad de tu información de inicio de sesión y de cualquier actividad que ocurra en tu cuenta.</p>
+
+                <p><b>Limitaciones de Responsabilidad:</b> No somos responsables de los daños o pérdidas que puedas experimentar
+                mientras utilizas nuestro sitio. Te recomendamos tomar precauciones y utilizar nuestro sitio de manera
+                segura.</p>
+
+                <p><b>Cambios en los Términos:</b> Nos reservamos el derecho de actualizar y modificar estos Términos y
+                Condiciones en cualquier momento. Te notificaremos de cualquier cambio significativo.</p>
+
+                <p><b>Finalización de Cuenta:</b> Nos reservamos el derecho de suspender o cancelar tu cuenta si incumples estos
+                Términos y Condiciones de manera reiterada.</p>
+
+                <p><b>Resolución de Conflictos:</b> Si surge una disputa, nos comprometemos a resolverla de manera justa y
+                equitativa.</p>
+
+                <p><b>Contacto:</b> Si tienes preguntas o inquietudes sobre estos Términos y Condiciones, no dudes en ponerte en contacto
+                con nosotros a través de la información de contacto proporcionada en nuestro sitio web.</p>
+
+                <p>Apreciamos que hayas dedicado tiempo para leer y comprender nuestros Términos y Condiciones. Te
+                invitamos a explorar nuestros servicios y a disfrutar de tu</p>
+                </div>
+  
+                <div class="text-center mt-4">
+                    <mat-checkbox [(ngModel)]="chkAceptar" class="example-margin">Acepto términos y
+                    condiciones</mat-checkbox>
+                </div>
+
+                
+
+
+                <button
+                    class="boton w-40 text-lg font-bold bg-sunared-500 text-white py-2 px-4 rounded-full mx-auto block mt-4 mb-4"
+                    (click)="aceptaTerminos()">ACEPTAR</button>
+            </div>      -->
+    

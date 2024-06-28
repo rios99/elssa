@@ -1,0 +1,88 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+
+/* Define your custom colors using CSS custom properties (variables) */
+:root {
+    --sunagray-100: #EBEAED;
+    --sunagray-200: #EDF5FE;
+    --sunagray-300: #D6D6D6;
+    --sunagray-400: #B3B3B3;
+    --sunagray-500: #EBEAED;
+    --sunagray-600: #4D4D4D;
+    --sunagray-700: #333333;
+    --sunagray-800: #262626;
+    --sunagray-900: #1A1A1A;
+  
+    --sunablue-100: #EDF5FE;
+    --sunablue-200: #CCE0FF;
+    --sunablue-300: #99C2FF;
+    --sunablue-400: #4D8EFF;
+    --sunablue-500: #00377D;
+    --sunablue-600: #0052CC;
+    --sunablue-700: #003D99;
+    --sunablue-800: #002966;
+    --sunablue-900: #001433;
+  
+    --sunagreen-100: #e6f756;
+    --sunagreen-200: #e6f756;
+    --sunagreen-300: #e6f756;
+    --sunagreen-400: #e6f756;
+    --sunagreen-500: #cbe854;
+    --sunagreen-600: #e6f756;
+    --sunagreen-700: #e6f756;
+    --sunagreen-800: #e6f756;
+    --sunagreen-900: #4b7161;
+  
+    --sunared-100: #FFECF0;
+    --sunared-200: #FFD6E0;
+    --sunared-300: #FF99BF;
+    --sunared-400: #FF4D9F;
+    --sunared-500: #D80030;
+    --sunared-600: #CC0052;
+    --sunared-700: #99003D;
+    --sunared-800: #660029;
+    --sunared-900: #330014;
+}
+
+// Import Font Awesome styles
+@import '~font-awesome/css/font-awesome.min.css';
+
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$template-primary: mat.define-palette(mat.$indigo-palette);
+$template-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$template-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$template-theme: mat.define-light-theme((
+  color: (
+    primary: $template-primary,
+    accent: $template-accent,
+    warn: $template-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($template-theme);
+
+/* Import Tailwind CSS styles */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html, body { height: 100%;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background-color: #EDF5FE; }

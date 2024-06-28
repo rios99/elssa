@@ -1,0 +1,41 @@
+.btnMensaje{
+    background-color: #D80030 !important;
+}
+.example-card {
+    width: 100%;
+    max-width: 600px;
+     /* Ajusta el tamaño máximo según tus necesidades */
+    margin: 0 auto; /* Centra el card */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 75%; /* Proporción 16:9 para hacerlo responsive */
+}
+
+iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+// @media only screen and (max-width: 600px) {
+//     .example-card {
+//         max-width: 150%; /* Utiliza el ancho completo en pantallas pequeñas */
+//     }
+
+//     .video-container {
+//         padding-bottom: 150%; /* Ajusta la proporción según tus necesidades */
+//     }
+// }
+@media only screen and (max-width: 600px) {
+    .example-card {
+        max-width: 100%; /* Utiliza el ancho completo en pantallas pequeñas */
+    }
+
+    .video-container {
+        padding-bottom: 100%; /* Ajusta la proporción según tus necesidades */
+    }
+}

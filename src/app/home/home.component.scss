@@ -1,0 +1,117 @@
+@media (min-width: 320px) {
+  .descripcion {
+    background-blend-mode: multiply; //,color-burn darken difference exclusion multiply overlay  saturation soft-light
+    background-image: URL("assets/imgElsa/entrada.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+    height: 100vh;
+    align-items: center;
+  }
+  .ingresar {
+    background-color: #d51317 !important;
+    font-size: 20px;
+    height: 50px;
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+  .contenedor {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .logoIzquierda {
+    width: 100%;
+    height: auto;
+    background-size: contain;
+    object-fit: cover;
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .descripcion {
+    background-image: URL("assets/imgElsa/portada_01.png");
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+  }
+
+  .logoIzquierda {
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: contents;
+    width: 100%;
+  }
+  .ingresar {
+    margin-top: -50%;
+    font-size: 30px;
+    padding: 30px 50px;
+  }
+  .contenedor {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .descripcion {
+    background-image: URL("assets/imgElsa/entrada.png");
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+  }
+
+  .logoIzquierda {
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+    width: 100%;
+  }
+
+  .ingresar {
+    margin-top: -50%;
+    font-size: 20px;
+    padding: 20px 40px;
+  }
+}
+
+@media (min-width: 1680px) {
+  .descripcion {
+    background-image: URL("assets/imgElsa/portada_01.png");
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+  }
+
+  .logoIzquierda {
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+    width: 100%;
+  }
+  .contenedor {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ingresar {
+    margin-top: -50%;
+    font-size: 40px;
+    padding: 30px 50px;
+  }
+}
