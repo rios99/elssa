@@ -47,6 +47,19 @@ h1{
     box-shadow:
         inset calc(var(--colita)/2) calc(var(--colita)/3) 0 0 white;
 }
+
+@media (min-width: 320px) {
+    .containerGrafica {
+        margin-top: 1rem;
+        align-items: center;
+    }
+    h1{
+        font-size: 16px;
+        margin-top: 15px;
+    }
+}
+
+
 @media(max-height: 790px) and (min-width: 1270px) {
     .futer {
         margin-top: -2%;
@@ -68,28 +81,7 @@ h1{
         margin: auto;
     }
 }
-@media(max-width: 640px){
-    .terminos {
-        flex-direction: column;
-        height: 50%;
-    }
-    .ingresar{
-        position: relative;
-        top: -70%;
-    }
-    .image{
-        max-width: 120%;
-        margin-top: 20%;
-    }
-}
-.caja{
-    margin-top: 2%;
-}
-.asd{
-    margin-top: -3%;
-    height: auto;
-    min-height: 100%;
-}
+
 .img{
     width: 80%;
     margin-top: 3%;
@@ -117,10 +109,6 @@ h1{
     .cabecera-container{
         flex-direction: column;
     }
-    h1{
-        font-size: 19px;
-        margin-top: 15px;
-    }
     .xd{
         height: 13%;
     }
@@ -128,14 +116,7 @@ h1{
 .body-container{
     height: 100svh;
 }
-@media(min-width: 350px) and (max-width: 399px) {
-    .containerGrafica {
-      margin-top: -15% !important;
-    }
-    .btnSiguiente{
-      margin-top: 5% !important;  
-    }
-}
+
 @media(min-width: 520px) and (max-width: 680px) {
     .containerGrafica {
       margin-top: -10% !important;
@@ -146,14 +127,9 @@ h1{
 }
 @media(min-width: 768px) and (max-width: 1279px) {
     .body-container {
-      height: 70vh;
+      height: 100svh;
     }
 }
-@media(min-width: 1024px){
-    // .body-container{
-    //     height: 100vh;
-    // }
- }
  @media(min-width: 1280px){
     .body-container{
         margin-top: -230px !important;
@@ -175,6 +151,8 @@ h1{
      .containerGrafica {
          justify-content: space-between;
          display: flex;
+         height: 60%;
+         align-items: center;
      }
  }
  //laptops 13 14 15
