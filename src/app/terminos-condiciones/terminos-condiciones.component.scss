@@ -50,24 +50,39 @@
 
 @media (min-width: 320px) {
 
+    .container {
+        padding: 0;
+        margin: 0;
+    }
     .cabecera {
         width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        height: 15vh;
 
         .cabecera-container {
-            align-items: center;
-            display: flex;
-            justify-content: center;
+            padding-top: .5rem;
+        }
+
+        h1{
+            font-size: 15px;
+            font-weight: 500;
         }
     }
 
     .body-container {
-        height: 80%;
+        height: 60%;
         align-items: center;
         justify-content: center;
         display: flex;
+        flex: 1;
     }
-    h1{
-        font-size: 15px;
+
+    .footer{
+        width: 100%;
+        position: relative;
+        bottom: 0;
     }
 }
 
