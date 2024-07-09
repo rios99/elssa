@@ -46,6 +46,8 @@ h1{
         inset calc(var(--colita)/2) calc(var(--colita)/3) 0 0 white;
 }
 
+//Resoluciones de pantalla
+
 @media (min-width: 320px) {
   .container {
     padding: 0;
@@ -272,6 +274,7 @@ h1{
     }
 
     .container-btnsiguiente {
+      margin-top: 80px;
       margin-right: 100px;
       display: flex;
 
@@ -340,7 +343,8 @@ h1{
     }
 
     .container-btnsiguiente {
-      margin-right: 100px;
+      margin-top: 80px;
+      margin-right: 60px;
       display: flex;
 
       .btnSiguiente {
