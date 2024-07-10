@@ -23,8 +23,8 @@ h1{
 .globo.i {
   width: 450px;
   height: 100px;
-  margin-top: -60%;
-  left: -50%;
+  margin-top: -40%;
+  left: -80%;
 }
 
 .globo::before {
@@ -293,6 +293,7 @@ h1{
 
     .container-sunafilito {
       position: absolute;
+      bottom: 40px;
     }
   }
 
@@ -362,7 +363,7 @@ h1{
 
     .container-sunafilito {
       position: absolute;
-      bottom: 120px;
+      bottom: 30px;
       margin-left: 50px;
     }
   }

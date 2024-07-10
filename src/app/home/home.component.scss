@@ -35,11 +35,17 @@
 }
 
 @media (min-width: 768px) {
+  .contenedor-logo-izquierda{
+    flex: none !important;
+  }
+
   .descripcion {
-    background-image: URL("assets/imgElsa/portada_01.png");
+    background-image: URL("assets/imgElsa/IPAD_Filita.png");
     background-size: cover;
     object-fit: cover;
     display: flex;
+    height: 100vh;
+    max-height: 100vh !important;
   }
 
   .logoIzquierda {
@@ -62,11 +68,18 @@
     background-color: white;
     justify-content: center;
   }
+  .logoIzquierda {
+    width: 100%;
+    height: auto;
+    background-size: contain;
+    object-fit: cover;
+    display: none;
+  }
 }
 
 @media (min-width: 1024px) {
   .descripcion {
-    background-image: URL("assets/imgElsa/entrada.png");
+    background-image: URL("assets/imgElsa/Comite-de-SST_con-filita.png");
     background-blend-mode: multiply;
     background-size: cover;
     object-fit: cover;
@@ -89,7 +102,35 @@
 
 @media (min-width: 1680px) {
   .descripcion {
-    background-image: URL("assets/imgElsa/portada_01.png");
+    background-image: URL("assets/imgElsa/Web_Filita_1680.png");
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+  }
+
+  .logoIzquierda {
+    background-blend-mode: multiply;
+    background-size: cover;
+    object-fit: cover;
+    display: flex;
+    width: 100%;
+  }
+  .contenedor {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ingresar {
+    margin-top: -50%;
+    font-size: 40px;
+    padding: 30px 50px;
+  }
+}
+@media (min-width: 1920px) {
+  .descripcion {
+    background-image: URL("assets/imgElsa/Web_Filita_1920.png");
     background-blend-mode: multiply;
     background-size: cover;
     object-fit: cover;
