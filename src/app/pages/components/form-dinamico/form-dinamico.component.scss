@@ -15,9 +15,6 @@
     padding-top: 0%;
     padding-bottom: 15%;
 }
-.cont {
-  top: -15%;
-}
 .scroll-contenido {
   display: flex;
   justify-content: center;
@@ -41,23 +38,6 @@
   }
 }
 
-.sunared-triangle-right {
-  position: absolute;
-  bottom: -30px;
-  width: 0;
-  height: 0;
-  border-left: 40px solid transparent;
-  border-right: 0px solid transparent;
-  border-top: 30px solid var(--sunared-100);
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  right: 30px;
-}
-
-.boton-container {
-  margin-bottom: 20%;
-}
 .iconoo {
   position: relative;
   right: -20%;
@@ -78,12 +58,6 @@
   font-size: 22px;
 }
 
-.casita-containerr {
-  position: relative;
-  left: 92%;
-  top: 18%;
-}
-
 .casitaa {
   background-color: #00377d;
   color: #ffffff;
@@ -94,13 +68,6 @@
   bottom: 24px;
   border-radius: 50%;
   padding: 5px;
-}
-.casita-container {
-  position: fixed;
-  left: 72%;
-  top: 70%;
-  height: 150px;
-  width: 5%;
 }
 
 .casita {
@@ -115,19 +82,6 @@
   top: -30%;
 }
 
-// .cont-option{
-//     margin-top: -35%;
-// }
-// .cont-option2{
-//     margin-top: -20%;
-// }
-
-.caja {
-  margin-bottom: -90px;
-}
-.scroool {
-  overflow-y: scroll;
-}
 @keyframes animations {
   0% {
     left: 0;
@@ -145,12 +99,6 @@
 @media (max-width: 500px) {
   .iconoo {
     padding: 2px 4px;
-  }
-
-  .casita-containerr {
-    position: relative;
-    left: 78%;
-    top: 2%;
   }
 
   .casitaa {
@@ -173,12 +121,6 @@
     font-size: 22px;
   }
 
-  .casita-container {
-    position: relative;
-    left: 100.5%;
-    top: 10%;
-  }
-
   .casita {
     font-size: 25px;
     position: relative;
@@ -189,23 +131,10 @@
 }
 
 @media (max-width: 767px) {
-  .text-input {
-    margin-top: 20%;
-  }
-
-  .boton-container {
-    margin-bottom: 15px;
-  }
-
   .p1 {
     font-size: 16px;
     line-height: 1.2;
   }
-
-  .res-1 {
-    font-size: 10px;
-  }
-
   .p2 {
     font-size: 10px;
     line-height: 1.2;
@@ -219,18 +148,10 @@
 }
 
 @media (min-width: 1601px) {
-  .cont-option2 {
-    top: 5%;
-  }
   .p1 {
     font-size: 30px;
     line-height: 1.2;
   }
-
-  .res-1 {
-    font-size: 15px;
-  }
-
   .p2 {
     font-size: 17px;
     line-height: 1.2;
@@ -253,21 +174,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 996px) {
-  .cont {
-    max-width: 50%;
-    margin: auto;
-  }
-
-  .res-1 {
-    font-size: 10px;
-  }
-}
 @media (min-width: 500px) and (max-width: 999px) {
-  .filita {
-    //    display: none !important;
-    left: -20%;
-  }
   .p1 {
     font-size: 12px;
     line-height: 1.2;
@@ -275,34 +182,6 @@
   .p2 {
     font-size: 10px;
     line-height: 1.2;
-  }
-}
-
-@media (max-width: 500px) {
-  .filita {
-    //    display: none !important;
-    left: -20%;
-  }
-  .cont-option {
-    margin-top: 30%;
-  }
-  .scroool {
-    overflow-y: scroll;
-  }
-}
-
-@media (min-width: 1187px) {
-  .casita-container {
-    left: 70%;
-  }
-  .btn1 {
-    left: 10%;
-    width: 50%;
-  }
-
-  .btn2 {
-    left: 30%;
-    width: 52%;
   }
 }
 
@@ -316,17 +195,8 @@
   .tooltip3 {
     display: none;
   }
-  .cont {
-    top: 11%;
-  }
 }
 @media (min-width: 500px) {
-  .mensaje {
-    margin-top: -5%;
-  }
-  .cont-option {
-    top: -50%;
-  }
   .volver {
     margin-top: 20%;
   }
@@ -339,13 +209,6 @@
   }
   .tooltip3 {
     opacity: 0;
-  }
-  .descarga {
-    //margin-top: -30%;
-    margin-top: -45%;
-  }
-  .finalizaOrientacion {
-    margin-top: -30%;
   }
   .iconoo:hover {
     .tooltip {
@@ -368,36 +231,10 @@
     }
   }
 }
-@media (max-height: 600px) and (max-width: 1024px) {
-  .filita {
-    //    display: none !important;
-    top: 32%;
-    left: -20%;
-  }
-}
-@media (max-width: 767px) and (min-width: 360px) {
-  .text-min {
-    font-size: 13px;
-  }
-}
-@media (max-width: 380px) and (min-width: 360px) {
-  .text-min {
-    font-size: 10px;
-  }
-}
 @media (max-width: 600px) and (min-width: 500px) {
   .btnDinamico {
     margin-top: 10%;
     margin-left: 17%;
-  }
-  .btnsConformiad {
-    left: 5%;
-  }
-}
-
-@media (max-width: 380px) {
-  .container-btnRegresar {
-    bottom: 10% !important;
   }
 }
 
@@ -410,11 +247,7 @@
     height: 40px !important;
   }
 }
-@media (min-width: 1024px) {
-  .containerFrm {
-    margin-left: 15%;
-  }
-}
+
 @media ((min-width: 1280px) and (max-width: 1366px)) and (max-height: 768px) {
   .textInicio {
     font-size: 10px;
@@ -428,8 +261,4 @@
     align-items: center;
   }
 }
-@media (min-width: 1280px) and (max-height: 720px) {  
-  .footer {
-    position: relative;
-  }
-}
+
